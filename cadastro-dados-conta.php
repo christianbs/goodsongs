@@ -23,41 +23,16 @@ $cidade = htmlspecialchars ($_POST["cidade"]);
         </section>
         <section class="col-sm-4">
             <form role="form">
+                <input type="hidden" class="form-control" id="nome" name="nome" value="<?php echo $nome; ?>">
+                <input type="hidden" class="form-control" id="cpf" name="cpf" value="<?php echo $cpf; ?>">
+                <input type="hidden" class="form-control" id="email" name="email" value="<?php echo $email; ?>">
+                <input type="hidden" class="form-control" id="confirmaEmail" name="confirmaEmail" value="<?php echo $confirmaEmail; ?>">
+                <input type="hidden" class="form-control" id="sexo" name="sexo" value="<?php echo $sexo; ?>">
+                <input type="hidden" class="form-control" id="dataNascimento" value="<?php echo $dataNascimento; ?>">
+                <input type="hidden" class="form-control" id="estado" name="estado" value="<?php echo $estado; ?>">
+                <input type="hidden" class="form-control" id="cidade" name="cidade" value="<?php echo $cidade; ?>">
+
                 <div class="form-group">
-                    <div class="form-group">
-
-                        <input type="hidden" class="form-control" id="nome" name="nome" value="<?php echo $nome; ?>">
-                    </div>
-                    <div class="form-group">
-
-                        <input type="hidden" class="form-control" id="cpf" name="cpf" value="<?php echo $cpf; ?>">
-                    </div>
-                    <div class="form-group">
-
-                        <input type="hidden" class="form-control" id="email" name="email" value="<?php echo $email; ?>">
-                    </div>
-                    <div class="form-group">
-
-                        <input type="hidden" class="form-control" id="confirmaEmail" name="confirmaEmail" value="<?php echo $confirmaEmail; ?>">
-                    </div>
-                    <div class="form-group">
-
-                        <input type="hidden" class="form-control" id="sexo" name="sexo" value="<?php echo $sexo; ?>">
-                    </div>
-                    <div class="form-group">
-
-                        <input type="hidden" class="form-control" id="dataNascimento" value="<?php echo $dataNascimento; ?>">
-                    </div>
-                    <div class="form-group">
-
-                        <input type="hidden" class="form-control" id="estado" name="estado" value="<?php echo $estado; ?>">
-                    </div>
-                    <div class="form-group">
-
-                        <input type="hidden" class="form-control" id="cidade" name="cidade" value="<?php echo $cidade; ?>">
-                    </div>
-
-
                     <label for="email">Usuário:</label>
                     <input type="email" class="form-control" id="email">
                 </div>
