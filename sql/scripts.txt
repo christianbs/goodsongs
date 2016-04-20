@@ -1,0 +1,25 @@
+create table endereco(
+	id int not null auto_increment primary key,
+    endereco varchar(255) not null,
+    numero int not null,
+    cidade varchar(255) not null,
+    estado varchar(255) not null,
+    cep int not null
+);
+create table dados_pessoais(
+	id int not null auto_increment primary key,
+    nome varchar(255) not null,
+    cpf varchar(255) not null,
+    email varchar(255) not null,
+    sexo varchar(1) not null,
+    nascimento date not null,
+    id_endereco int not null,
+    foreign key(id_endereco) references endereco(id)
+);
+create table usuario(
+	id int not null auto_increment primary key,
+    usuario varchar(255) not null,
+    senha varchar(255) not null,
+	id_dados_pessoais int not null,
+    foreign key(id_dados_pessoais) references dados_pessoais(id)
+);
