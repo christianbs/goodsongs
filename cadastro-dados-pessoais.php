@@ -38,12 +38,24 @@
                     <input type="text" class="form-control" id="dataNascimento" name="dataNascimento">
                 </div>
                 <div class="form-group">
-                    <label for="estado">Estado:</label>
-                    <input type="text" class="form-control" id="estado" name="estado">
+                    <label for="logradouro">Logradouro:</label>
+                    <input type="text" class="form-control" id="logradouro" name="logradouro">
+                </div>
+                <div class="form-group">
+                    <label for="numero">Número:</label>
+                    <input type="text" class="form-control" id="numero" name="numero">
                 </div>
                 <div class="form-group">
                     <label for="cidade">Cidade:</label>
                     <input type="text" class="form-control" id="cidade" name="cidade">
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado:</label>
+                    <input type="text" class="form-control" id="estado" name="estado">
+                </div>
+                <div class="form-group">
+                    <label for="cep">CEP:</label>
+                    <input type="text" class="form-control" id="cep" name="cep">
                 </div>
                 <p><input type="submit"  class="btn btn-default" value="Proximo" name="prosseguir"></p>
             </form>

@@ -4,9 +4,12 @@ $cpf = htmlspecialchars ($_POST["cpf"]);
 $email = htmlspecialchars ($_POST["email"]);
 $confirmaEmail = htmlspecialchars ($_POST["confirmaEmail"]);
 $sexo = htmlspecialchars ($_POST["sexo"]);
-$dataNascimento = htmlspecialchars ($_POST["datanascimento"]);
+$dataNascimento = htmlspecialchars ($_POST["dataNascimento"]);
 $estado = htmlspecialchars ($_POST["estado"]);
 $cidade = htmlspecialchars ($_POST["cidade"]);
+$logradouro = htmlspecialchars ($_POST["logradouro"]);
+$cep = htmlspecialchars ($_POST["cep"]);
+$numero = htmlspecialchars ($_POST["numero"]);
 ?>
 <!DOCTYPE html>
 <html> 
@@ -22,27 +25,30 @@ $cidade = htmlspecialchars ($_POST["cidade"]);
         <section class="col-sm-4">
         </section>
         <section class="col-sm-4">
-            <form role="form">
+            <form role="form" method="post" action="php/controles/cadastro_usuario.php">
                 <input type="hidden" class="form-control" id="nome" name="nome" value="<?php echo $nome; ?>">
                 <input type="hidden" class="form-control" id="cpf" name="cpf" value="<?php echo $cpf; ?>">
                 <input type="hidden" class="form-control" id="email" name="email" value="<?php echo $email; ?>">
                 <input type="hidden" class="form-control" id="confirmaEmail" name="confirmaEmail" value="<?php echo $confirmaEmail; ?>">
                 <input type="hidden" class="form-control" id="sexo" name="sexo" value="<?php echo $sexo; ?>">
-                <input type="hidden" class="form-control" id="dataNascimento" value="<?php echo $dataNascimento; ?>">
+                <input type="hidden" class="form-control" id="dataNascimento" name="dataNascimento" value="<?php echo $dataNascimento; ?>">
                 <input type="hidden" class="form-control" id="estado" name="estado" value="<?php echo $estado; ?>">
                 <input type="hidden" class="form-control" id="cidade" name="cidade" value="<?php echo $cidade; ?>">
+                <input type="hidden" class="form-control" id="logradouro" name="logradouro" value="<?php echo $logradouro; ?>">
+                <input type="hidden" class="form-control" id="cep" name="cep" value="<?php echo $cep; ?>">
+                <input type="hidden" class="form-control" id="numero" name="numero" value="<?php echo $numero; ?>">
 
                 <div class="form-group">
-                    <label for="email">Usuário:</label>
-                    <input type="email" class="form-control" id="email">
+                    <label for="usuario">Usuário:</label>
+                    <input type="text" class="form-control" id="usuario" name="usuario">
                 </div>
                 <div class="form-group">
-                    <label for="pwd">Senha:</label>
-                    <input type="password" class="form-control" id="pwd">
+                    <label for="senha">Senha:</label>
+                    <input type="password" class="form-control" id="senha" name="senha"> 
                 </div>
                 <div class="form-group">
-                    <label for="pwd">Confirmação de Senha:</label>
-                    <input type="password" class="form-control" id="pwd">
+                    <label for="confirmarSenha">Confirmação de Senha:</label>
+                    <input type="password" class="form-control" id="confirmarSenha" name="confirmarSenha">
                 </div>
                 <div class="checkbox">
                     <label><input type="checkbox">Lembre-me</label>
