@@ -19,16 +19,25 @@ $numero = htmlspecialchars ($_POST["numero"]);
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script  src="js/jquery.mask.min.js"></script>
+        <script src="js/script.js"></script>
 	</head>
 	<body>
 		<?php include 'menu.php';?>
         <section class="col-sm-4">
         </section>
         <section class="col-sm-4">
-            <form role="form" method="post" action="php/controles/cadastro_usuario.php">
-                <input type="hidden" class="form-control" id="nome" name="nome" value="<?php echo $nome; ?>">
-                <input type="hidden" class="form-control" id="cpf" name="cpf" value="<?php echo $cpf; ?>">
-                <input type="hidden" class="form-control" id="email" name="email" value="<?php echo $email; ?>">
+            <form role="form" method="post" enctype='multipart/form-data'  action='cadastra.php' onsubmit="return validarFormulario1();">
+				 <div style='margin-left:500px !important;width:500px; '>
+								<fieldset style='margin:auto !important'>                                
+									 <legend> Selecione uma imagem: </legend>
+									<input type='hidden' name='MAX_SIZE_FILE' value='1000000'> <br />
+									<input  type='file' name='ARQUIVO' id='arquivo'> <br />                              
+								</fieldset>
+				</div>
+                <input type='text' class='form-control' id='nome' name='nome' value= "<?php echo $nome ?>" >
+                <input type='hidden' class='form-control' id='cpf' name='cpf' value="<?php echo  $cpf ?>">
+                <input type='hidden' class='form-control' id='email' name='email' value="<?php echo $email ?>">
                 <input type="hidden" class="form-control" id="confirmaEmail" name="confirmaEmail" value="<?php echo $confirmaEmail; ?>">
                 <input type="hidden" class="form-control" id="sexo" name="sexo" value="<?php echo $sexo; ?>">
                 <input type="hidden" class="form-control" id="dataNascimento" name="dataNascimento" value="<?php echo $dataNascimento; ?>">
@@ -39,8 +48,8 @@ $numero = htmlspecialchars ($_POST["numero"]);
                 <input type="hidden" class="form-control" id="numero" name="numero" value="<?php echo $numero; ?>">
 
                 <div class="form-group">
-                    <label for="usuario">Usuário:</label>
-                    <input type="text" class="form-control" id="usuario" name="usuario">
+                    <label for="username">Usuário:</label>
+                    <input type="text" class="form-control" id="username" name="username">
                 </div>
                 <div class="form-group">
                     <label for="senha">Senha:</label>
@@ -48,15 +57,12 @@ $numero = htmlspecialchars ($_POST["numero"]);
                 </div>
                 <div class="form-group">
                     <label for="confirmarSenha">Confirmação de Senha:</label>
-                    <input type="password" class="form-control" id="confirmarSenha" name="confirmarSenha">
-                </div>
-                <div class="checkbox">
-                    <label><input type="checkbox">Lembre-me</label>
+                    <input type="password" class="form-control" id="confirmasenha" name="confirmasenha">
                 </div>
                 <button type="submit" class="btn btn-default">Cadastrar</button>
             </form>
         </section>
         <section class="col-sm-4">
         </section>
-	<body>
+	</body>
 </html>
