@@ -23,3 +23,17 @@ create table usuario(
 	id_dados_pessoais int not null,
     foreign key(id_dados_pessoais) references dados_pessoais(id)
 );
+create table forum(
+	id int not null auto_increment primary key,
+    id_usuario int not null,
+    titulo varchar(255) not null,
+    foreign key(id_usuario) references usuario(id)
+);
+create table post(
+	id int not null auto_increment primary key,
+    id_forum int not null,
+    id_usuario int not null,
+    post varchar(255) not null,
+    foreign key(id_forum) references forum(id),
+    foreign key(id_usuario) references usuario(id)
+);
