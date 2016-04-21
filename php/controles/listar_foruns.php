@@ -1,7 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: christian
- * Date: 21/04/16
- * Time: 15:36
- */
+
+include "../regras/cadastro_forum_rn.php";
+
+function listar() {
+    echo "Chamando Regra.";
+    listar_foruns_rn();
+}
