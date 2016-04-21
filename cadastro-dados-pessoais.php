@@ -67,6 +67,12 @@ $estados = array(
                     <label for="confirmaEmail">Confirmar E-mail:</label>
                     <input type="email" class="form-control" id="confirmaEmail" name="confirmaEmail"/>
                 </div>
+                
+                <div class="form-group">
+                    <label for="sexo">Sexo:</label><br>
+                    <label for="sexo"> <input type="radio" name="sexo" id="masculino" value="masculino"> Masculino</label><br>
+                   <label for="sexo"> <input type="radio" name="sexo" id="feminino" value="masculino"> Feminino</label><br>
+                </div>
                 <div class="form-group">
                     <label for="sexo">Sexo:</label>
                     <input type="text" class="form-control" id="sexo" name="sexo"/>
