@@ -1,15 +1,15 @@
 <?php
-$nome = htmlspecialchars ($_POST["nome"]);
-$cpf = htmlspecialchars ($_POST["cpf"]);
-$email = htmlspecialchars ($_POST["email"]);
-$confirmaEmail = htmlspecialchars ($_POST["confirmaEmail"]);
-$sexo = htmlspecialchars ($_POST["sexo"]);
-$dataNascimento = htmlspecialchars ($_POST["dataNascimento"]);
-$estado = htmlspecialchars ($_POST["estado"]);
-$cidade = htmlspecialchars ($_POST["cidade"]);
-$logradouro = htmlspecialchars ($_POST["logradouro"]);
-$cep = htmlspecialchars ($_POST["cep"]);
-$numero = htmlspecialchars ($_POST["numero"]);
+    $nome = htmlspecialchars ($_POST["nome"]);
+    $cpf = htmlspecialchars ($_POST["cpf"]);
+    $email = htmlspecialchars ($_POST["email"]);
+    $confirmaEmail = htmlspecialchars ($_POST["confirmaEmail"]);
+    $sexo = htmlspecialchars ($_POST["sexo"]);
+    $dataNascimento = htmlspecialchars ($_POST["dataNascimento"]);
+    $estado = htmlspecialchars ($_POST["estado"]);
+    $cidade = htmlspecialchars ($_POST["cidade"]);
+    $logradouro = htmlspecialchars ($_POST["logradouro"]);
+    $cep = htmlspecialchars ($_POST["cep"]);
+    $numero = htmlspecialchars ($_POST["numero"]);
 ?>
 <!DOCTYPE html>
 <html> 
@@ -35,11 +35,11 @@ $numero = htmlspecialchars ($_POST["numero"]);
 									<input  type='file' name='ARQUIVO' id='arquivo'> <br />                              
 								</fieldset>
 				</div>
-                <input type='text' class='form-control' id='nome' name='nome' value= "<?php echo $nome ?>" >
+                <input type='hidden' class='form-control' id='nome' name='nome' value= "<?php echo $nome ?>" >
                 <input type='hidden' class='form-control' id='cpf' name='cpf' value="<?php echo  $cpf ?>">
                 <input type='hidden' class='form-control' id='email' name='email' value="<?php echo $email ?>">
                 <input type="hidden" class="form-control" id="confirmaEmail" name="confirmaEmail" value="<?php echo $confirmaEmail; ?>">
-                <input type="hidden" class="form-control" id="sexo" name="sexo" value="<?php echo $sexo; ?>">
+                <input type="text" class="form-control" id="sexo" name="sexo" value="<?php echo $sexo; ?>">
                 <input type="hidden" class="form-control" id="dataNascimento" name="dataNascimento" value="<?php echo $dataNascimento; ?>">
                 <input type="hidden" class="form-control" id="estado" name="estado" value="<?php echo $estado; ?>">
                 <input type="hidden" class="form-control" id="cidade" name="cidade" value="<?php echo $cidade; ?>">

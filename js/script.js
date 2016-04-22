@@ -23,8 +23,8 @@ function validarFormulario(){
     var cpf = document.getElementById("cpf");
     var email = document.getElementById("email");
     var confirmaEmail = document.getElementById("confirmaEmail");
-    var masculino = document.getElementById("masculino").checked;         
-    var feminino = document.getElementById("feminino").checked;  
+    var masculino = document.getElementById("M").checked;         
+    var feminino = document.getElementById("F").checked;  
     var checado = true;
     var dataNascimento = document.getElementById("dataNascimento");   
     var logradouro = document.getElementById("logradouro");
@@ -34,7 +34,7 @@ function validarFormulario(){
     var cep = document.getElementById("cep");
     
     if(masculino || feminino == true){
-       var sexo = document.getElementById("dataNascimento");         
+       var sexo = document.getElementById("sexo");         
     }else{
         
         checado = false;
@@ -80,11 +80,6 @@ function validarFormulario(){
         
     }
   
-     if(cidade.value == ""){
-        
-        mensagem += "ERRO FALTA A CIDADE \n";
-        
-    }
     if(cidade.value == ""){
         
         mensagem += "ERRO FALTA A CIDADE \n";
@@ -136,6 +131,38 @@ function validarFormulario1(){
     }
     
 }
+
+
+//Validação java script se o campo esta vazio na tela de cadastro de cadastro de formulario
+function validarFormularioForum(){
+    var mensagem = "";
+    var titulo = document.getElementById("titulo");
+    var pergunta = document.getElementById("pergunta");
+   
+   
+    
+    if(titulo.value == ""){
+        
+        mensagem += "ERRO FALTA O TITULO DO FORUM \n";
+    }
+    if(pergunta.value == ""){
+        
+        mensagem += "ERRO FALTA A PRIMERIA PERGUNTA DO FORUM \n";
+        
+    }
+   
+    if(mensagem != ""){
+        
+        alert(mensagem);
+        return false;
+        
+    }else{
+        
+        return true;
+    }
+    
+}
+
 
 
     //validação via jquery para as mascaras.
