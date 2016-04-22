@@ -70,13 +70,10 @@ $estados = array(
                 
                 <div class="form-group">
                     <label for="sexo">Sexo:</label><br>
-                    <label for="sexo"> <input type="radio" name="sexo" id="masculino" value="masculino"> Masculino</label><br>
-                   <label for="sexo"> <input type="radio" name="sexo" id="feminino" value="masculino"> Feminino</label><br>
+                    <label for="sexo"> <input type="radio" name="sexo" id="M" value="M"> Masculino</label><br>
+                    <label for="sexo"> <input type="radio" name="sexo" id="F" value="F"> Feminino</label><br>
                 </div>
-                <div class="form-group">
-                    <label for="sexo">Sexo:</label>
-                    <input type="text" class="form-control" id="sexo" name="sexo"/>
-                </div>
+               
                 <div class="form-group">
                     <label for="dataNascimento" >Data nascimento:</label>
                     <input type="text" class="form-control" id="dataNascimento" name="dataNascimento"/>

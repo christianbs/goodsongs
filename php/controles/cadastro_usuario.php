@@ -21,4 +21,4 @@ $id_endereco = inserir_endereco_rn($logradouro, $numero, $cidade, $estado, $cep)
 $id_dados = inserir_dados_rn($nome, $cpf, $email, $sexo, $dataNascimento, $id_endereco);
 inserir_usuario_rn($usuario, $senha, $id_dados);
 
-header("location:'../../inicio.php'");
+header("location:../../inicio.php");

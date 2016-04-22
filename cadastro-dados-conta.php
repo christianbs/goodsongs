@@ -27,7 +27,7 @@ $numero = htmlspecialchars ($_POST["numero"]);
         <section class="col-sm-4">
         </section>
         <section class="col-sm-4">
-            <form role="form" method="post" enctype='multipart/form-data'  action='cadastra.php' onsubmit="return validarFormulario1();">
+            <form role="form" method="post" enctype='multipart/form-data'  action='php/controles/cadastro_usuario.php' onsubmit="return validarFormulario1();">
 				 <div style='margin-left:500px !important;width:500px; '>
 								<fieldset style='margin:auto !important'>                                
 									 <legend> Selecione uma imagem: </legend>
@@ -57,7 +57,7 @@ $numero = htmlspecialchars ($_POST["numero"]);
                 </div>
                 <div class="form-group">
                     <label for="confirmarSenha">Confirmação de Senha:</label>
-                    <input type="password" class="form-control" id="confirmasenha" name="confirmasenha">
+                    <input type="password" class="form-control" id="confirmarSenha" name="confirmarSenha">
                 </div>
                 <button type="submit" class="btn btn-default">Cadastrar</button>
             </form>
