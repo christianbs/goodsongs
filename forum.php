@@ -29,7 +29,6 @@
     <form method="post" action="php/controles/criar_post.php" onsubmit="return validarFormularioPost();" >
         <input type="hidden" name="tituloForum" value="<?php echo $titulo; ?>">
         <input type="hidden" name="idForum" value="<?php echo $id; ?>">
-        <input type="hidden" name="titulo" value="<?php echo $titulo; ?>">
         <div class="form-group">
             <label for="pergunta">Novo Post:</label>
             <textarea class="form-control" rows="5" id="post" name="post"></textarea>
