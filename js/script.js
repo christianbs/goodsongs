@@ -164,6 +164,28 @@ function validarFormularioForum(){
 }
 
 
+//Validação java script se o campo esta vazio na tela de formulario no post
+function validarFormularioPost(){
+    var mensagem = "";
+    var post = document.getElementById("post");  
+    
+    if(post.value == ""){
+        
+        mensagem += "digite algo no post \n";
+    }  
+    if(mensagem != ""){
+        
+        alert(mensagem);
+        return false;
+        
+    }else{
+        
+        return true;
+    }
+    
+}
+
+
 
     //validação via jquery para as mascaras.
 
