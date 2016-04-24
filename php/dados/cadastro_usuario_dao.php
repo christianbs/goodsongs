@@ -80,7 +80,7 @@ function deletar_usuario($id)
     echo "consultando...<br>";
     if ($resultado) {
         while ($linha = mysqli_fetch_array($resultado)) {
-            echo "deletando usuario com id " .$linha['id'];
+            echo "deletando usuario com id ".$linha['id'];
             $sql = "delete from usuario where id = " . $linha['id'];
             mysqli_query($conexao, $sql) or die ("Erro ao inserir dados: " . mysqli_error($conexao));
         }

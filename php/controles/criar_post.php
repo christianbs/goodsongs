@@ -1,12 +1,12 @@
 <?php
 
-include "../dados/cadastrar_post_dao.php";
-$id_usuario = 1;
-$id_forum = $_POST['idForum'];
-$post = $_POST['post'];
-$tituloForm = $_POST['titulo'];
+    include "../dados/cadastrar_post_dao.php";
+    $id_usuario = 1;
+    $id_forum = htmlspecialchars($_POST['idForum']);
+    $post = htmlspecialchars($_POST['post']);
+    $tituloForm = htmlspecialchars($_POST['titulo']);
 
-inserir_post($id_forum, $id_usuario, $post);
+    inserir_post($id_forum, $id_usuario, $post);
 ?>
 <html>
 <body onload="submeter()">

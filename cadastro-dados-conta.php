@@ -1,15 +1,25 @@
 <?php
-    $nome = htmlspecialchars ($_POST["nome"]);
-    $cpf = htmlspecialchars ($_POST["cpf"]);
-    $email = htmlspecialchars ($_POST["email"]);
-    $confirmaEmail = htmlspecialchars ($_POST["confirmaEmail"]);
-    $sexo = htmlspecialchars ($_POST["sexo"]);
-    $dataNascimento = htmlspecialchars ($_POST["dataNascimento"]);
-    $estado = htmlspecialchars ($_POST["estado"]);
-    $cidade = htmlspecialchars ($_POST["cidade"]);
-    $logradouro = htmlspecialchars ($_POST["logradouro"]);
-    $cep = htmlspecialchars ($_POST["cep"]);
-    $numero = htmlspecialchars ($_POST["numero"]);
+   
+    if(empty($_POST["nome"]) || empty($_POST["cpf"]) || empty($_POST["email"]) || empty($_POST["confirmaEmail"]) || empty($_POST["sexo"]) || empty($_POST["dataNascimento"]) || empty($_POST["estado"]) || empty($_POST["cidade"]) ||    empty ($_POST["logradouro"]) || empty($_POST["cep"]) || empty($_POST["numero"])){
+        
+     
+        echo "CAMPOS VAZIOS </br> ";
+        echo "<input type='button' class='btn btn-default' id='voltar' name='voltar' value='voltar' onclick='history.go(-1)'> ";
+        exit;    
+        
+    }else{
+        $nome = htmlspecialchars ($_POST["nome"]);
+        $cpf = htmlspecialchars ($_POST["cpf"]);
+        $email = htmlspecialchars ($_POST["email"]);
+        $confirmaEmail = htmlspecialchars ($_POST["confirmaEmail"]);
+        $sexo = htmlspecialchars ($_POST["sexo"]);
+        $dataNascimento = htmlspecialchars ($_POST["dataNascimento"]);
+        $estado = htmlspecialchars ($_POST["estado"]);
+        $cidade = htmlspecialchars ($_POST["cidade"]);
+        $logradouro = htmlspecialchars ($_POST["logradouro"]);
+        $cep = htmlspecialchars ($_POST["cep"]);
+        $numero = htmlspecialchars ($_POST["numero"]);
+    }
 ?>
 <!DOCTYPE html>
 <html> 
@@ -48,8 +58,8 @@
                 <input type="hidden" class="form-control" id="numero" name="numero" value="<?php echo $numero; ?>">
 
                 <div class="form-group">
-                    <label for="username">Usuário:</label>
-                    <input type="text" class="form-control" id="username" name="username">
+                    <label for="usuario">Usuário:</label>
+                    <input type="text" class="form-control" id="usuario" name="usuario">
                 </div>
                 <div class="form-group">
                     <label for="senha">Senha:</label>
