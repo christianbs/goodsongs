@@ -36,3 +36,17 @@ function listar_posts_forum($id_forum)
         echo "</table>";
     }
 }
+
+function excluir_todos_posts($id_forum) {
+    global $conexao;
+    $sql = "select * from post where id_forum = " . $id_forum;
+    $resultado = mysqli_query($conexao, $sql) or die ("Não foi possível acessar o banco de dados.");
+    if ($resultado) {
+        while ($linha = mysqli_fetch_array($resultado)) {
+            $sql = "delete from post where id = " . $linha['id'];
+                mysqli_query($conexao, $sql) or die ("Não foi possível acessar o banco de dados.");
+                if ($linha['id'] != null) {
+            }
+        }
+    }
+}

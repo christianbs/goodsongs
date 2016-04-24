@@ -56,10 +56,16 @@ function listar_foruns_admin()
             echo "<tr>";
             echo "<td><a onclick='carregarIdForum(" . $linha['id'] . ", \"" . $linha['titulo'] . "\")'> " . $linha['titulo'] . "</a></td>";
             echo "<td style='text-align: center;'><a><span class=\"glyphicon glyphicon-pencil\"></span></a></td>";
-            echo "<td style='text-align: center;'><a data-toggle=\"modal\" data-target=\"#modalExcluirForum\"><span class=\"glyphicon glyphicon-remove-circle\"></span></a></td>";
+            echo "<td style='text-align: center;'><a data-toggle=\"modal\" data-target=\"#modalExcluirForum\" onclick='setIdForumExcluido(\"" . $linha['id'] . "\")'><span class=\"glyphicon glyphicon-remove-circle\"></span></a></td>";
             echo "</tr>";
         }
         echo "</tbody>";
         echo "</table>";
     }
+}
+
+function excluir_forum($id_forum) {
+    global $conexao;
+    $sql = "delete from forum where id = " . $id_forum;
+    $resultado = mysqli_query($conexao, $sql) or die ("Não foi possível acessar o banco de dados.");
 }

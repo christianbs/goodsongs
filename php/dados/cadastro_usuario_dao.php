@@ -91,7 +91,7 @@ function deletar_dados($id)
 {
     global $conexao;
     $sql = "select * from dados_pessoais where id = " . $id;
-    $id_endereco;
+    $id_endereco = "";
     $resultado = mysqli_query($conexao, $sql) or die ("Erro ao inserir dados: " . mysqli_error($conexao));
     if ($resultado) {
         while ($linha = mysqli_fetch_array($resultado)) {

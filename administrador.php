@@ -60,8 +60,11 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Sim</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="excluirForum()">Sim</button>
             </div>
+            <form class="fade" id="formExcluirForum" method="post" action="php/controles/excluir_forum.php">
+                <input type='hidden' id='idForumExcluido' name='idForumExcluido'>
+            </form>
         </div>
     </div>
 </div>
@@ -71,6 +74,12 @@
     }
     function setIdUsuarioExcluido(id) {
         document.getElementById("idUsuarioExcluido").value = id;
+    }
+    function excluirForum() {
+        document.getElementById("formExcluirForum").submit();
+    }
+    function setIdForumExcluido(id) {
+        document.getElementById("idForumExcluido").value = id;
     }
 </script>
 <body>
