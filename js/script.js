@@ -103,23 +103,23 @@ function validarFormulario(){
 //Validação java script se o campo esta vazio na tela de cadastro de cadastro de conta
 function validarFormulario1(){
     var mensagem = "";
-    var username = document.getElementById("username");
+    var usuario = document.getElementById("usuario");
     var senha = document.getElementById("senha");
-    var confirmasenha = document.getElementById("confirmasenha");
+    var confirmarSenha = document.getElementById("confirmarSenha");
    
     
-    if(username.value == ""){
+    if(usuario.value == ""){
         
-        mensagem += "ERRO FALTA O USERNAME \n";
+        mensagem += "ERRO FALTA O USUARIO \n";
     }
     if(senha.value == ""){
         
         mensagem += "ERRO FALTA A SENHA \n";
         
     }
-     if(confirmasenha.value == ""){
+     if(confirmarSenha.value == ""){
         
-        mensagem += "ERRO FALTA O confirmasenha \n";
+        mensagem += "ERRO FALTA O CONFIRMAR SENHA \n";
         
     }   
     if(mensagem != ""){
@@ -164,10 +164,32 @@ function validarFormularioForum(){
 }
 
 
+//Validação java script se o campo esta vazio na tela de formulario no post
+function validarFormularioPost(){
+    var mensagem = "";
+    var post = document.getElementById("post");  
+    
+    if(post.value == ""){
+        
+        mensagem += "digite algo no post \n";
+    }  
+    if(mensagem != ""){
+        
+        alert(mensagem);
+        return false;
+        
+    }else{
+        
+        return true;
+    }
+    
+}
+
+
 
     //validação via jquery para as mascaras.
 
-  $(document).ready(function() {      
+    $(document).ready(function() {      
       
      $("#cpf").mask("999.999.999-99");
      $("#dataNascimento").mask("00/00/0000");

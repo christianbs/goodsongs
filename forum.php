@@ -12,10 +12,10 @@
 </head>
 <body>
 <?php
-include 'menu.php';
-include "php/dados/cadastrar_post_dao.php";
-$id = $_POST['idForum'];
-$titulo = $_POST['tituloForum'];
+    include 'menu.php';
+    include "php/dados/cadastrar_post_dao.php";
+    $id = htmlspecialchars($_POST['idForum']);
+    $titulo = htmlspecialchars($_POST['tituloForum']);
 ?>
 <section class="col-sm-2">
 </section>
