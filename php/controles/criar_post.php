@@ -4,7 +4,7 @@
     $id_usuario = 1;
     $id_forum = htmlspecialchars($_POST['idForum']);
     $post = htmlspecialchars($_POST['post']);
-    $tituloForm = htmlspecialchars($_POST['titulo']);
+    $tituloForum = htmlspecialchars($_POST['tituloForum']);
 
     inserir_post($id_forum, $id_usuario, $post);
 ?>
