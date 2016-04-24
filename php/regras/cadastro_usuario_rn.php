@@ -1,4 +1,5 @@
 <?php
+
 include "../dados/cadastro_usuario_dao.php";
 
 function listar_usuarios()

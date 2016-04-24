@@ -75,12 +75,11 @@ function buscar_nome_por_id($idusuario)
 
 function deletar_usuario($id)
 {
+    global $conexao;
     $sql = "select * from usuario where id_dados_pessoais = " . $id;
     $resultado = mysqli_query($conexao, $sql) or die ("Erro ao inserir dados: " . mysqli_error($conexao));
-    echo "consultando...<br>";
     if ($resultado) {
         while ($linha = mysqli_fetch_array($resultado)) {
-            echo "deletando usuario com id " . . $linha['id'];
             $sql = "delete from usuario where id = " . $linha['id'];
             mysqli_query($conexao, $sql) or die ("Erro ao inserir dados: " . mysqli_error($conexao));
         }
@@ -92,14 +91,16 @@ function deletar_dados($id)
 {
     global $conexao;
     $sql = "select * from dados_pessoais where id = " . $id;
+    $id_endereco;
     $resultado = mysqli_query($conexao, $sql) or die ("Erro ao inserir dados: " . mysqli_error($conexao));
     if ($resultado) {
         while ($linha = mysqli_fetch_array($resultado)) {
-            deletar_endereco($linha['id_endereco']);
+            $id_endereco = $linha['id_endereco'];
         }
     }
     $sql = "delete from dados_pessoais where id = " . $id;
     $resultado = mysqli_query($conexao, $sql) or die ("Erro ao inserir dados: " . mysqli_error($conexao));
+    deletar_endereco($id_endereco);
 
 }
 
