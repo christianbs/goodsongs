@@ -68,7 +68,7 @@ function buscar_nome_por_id($idusuario)
     $resultado = mysqli_query($conexao, $sql) or die ("Erro ao inserir usuário: " . mysqli_error($conexao));
     if ($resultado) {
         while ($linha = mysqli_fetch_array($resultado)) {
-            return linha['nome'];
+            return $linha['nome'];
         }
     }
 }
