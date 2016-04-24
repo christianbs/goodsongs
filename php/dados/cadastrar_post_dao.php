@@ -1,6 +1,7 @@
 <?php
 
 include "mysql.php";
+include "cadastro_usuario_dao.php";
 
 function inserir_post($id_forum, $id_usuario, $post)
 {
@@ -27,7 +28,7 @@ function listar_posts_forum($id_forum)
         echo "<tbody>";
         while ($linha = mysqli_fetch_array($resultado)) {
             echo "<tr>";
-            echo "<td>" . $linha['id_usuario'] . "</td>";
+            echo "<td>" . buscar_nome_por_id($linha['id_usuario']) . "</td>";
             echo "<td>" . $linha['post'] . "</td>";
             echo "</tr>";
         }

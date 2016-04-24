@@ -32,3 +32,34 @@ function listar_foruns()
         echo "</table>";
     }
 }
+
+function listar_foruns_admin()
+{
+    global $conexao;
+    $sql = "select * from forum";
+    $resultado = mysqli_query($conexao, $sql) or die ("Não foi possível acessar o banco de dados.");
+    if ($resultado) {
+        echo "<table class='table table-striped'>";
+        echo "<thead>";
+        echo "<th>";
+        echo "Titulo";
+        echo "</th>";
+        echo "<th style='text-align: center;'>";
+        echo "Editar";
+        echo "</th>";
+        echo "<th style='text-align: center;'>";
+        echo "Excluir";
+        echo "</th>";
+        echo "</thead>";
+        echo "<tbody>";
+        while ($linha = mysqli_fetch_array($resultado)) {
+            echo "<tr>";
+            echo "<td><a onclick='carregarIdForum(" . $linha['id'] . ", \"" . $linha['titulo'] . "\")'> " . $linha['titulo'] . "</a></td>";
+            echo "<td style='text-align: center;'><a><span class=\"glyphicon glyphicon-pencil\"></span></a></td>";
+            echo "<td style='text-align: center;'><a data-toggle=\"modal\" data-target=\"#modalExcluirForum\"><span class=\"glyphicon glyphicon-remove-circle\"></span></a></td>";
+            echo "</tr>";
+        }
+        echo "</tbody>";
+        echo "</table>";
+    }
+}

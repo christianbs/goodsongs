@@ -19,6 +19,7 @@
                 <li><a href="contato.html">Contato</a></li>
                 <li><a href="inicio.php">Forum</a></li>
                 <li><a href="cadastro-dados-pessoais.php">Cadastro</a></li>
+                <li><a href="administrador.php">Administrador</a></li>
             </ul>
         </div>
     </nav>
