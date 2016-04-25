@@ -90,6 +90,13 @@ function validarFormulario(){
         mensagem += "ERRO FALTA O CEP \n";
         
     }
+     if (email.value != "" && confirmaEmail.value !="" ){
+         if(email.value.localeCompare(confirmaEmail.value) != 0){
+        
+        mensagem += "ERRO OS EMAILS ESTÃO DIFERENTES INSIRA NOVAMENTE"
+         }
+        
+    }
     if(mensagem != ""){
         
         alert(mensagem);
@@ -122,6 +129,13 @@ function validarFormulario1(){
         mensagem += "ERRO FALTA O CONFIRMAR SENHA \n";
         
     }   
+    if (senha.value != "" && confirmarSenha.value !="" ){
+         if(senha.value.localeCompare(confirmarSenha.value) != 0){
+        
+        mensagem += "ERRO AS SENHAS ESTÃO DIFERENTES INSIRA NOVAMENTE"
+         }
+        
+    }
     if(mensagem != ""){
         
         alert(mensagem);
