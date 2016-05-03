@@ -1,4 +1,6 @@
 <?php 
+        $checkedM = "";
+        $checkedF ="";
 
 $estados = array(
     "Acre"=>"AC",	 
@@ -58,6 +60,11 @@ $estados = array(
         $idEndereco = $resultado[12];
      
         $idDadosPessoais = $_POST["btn_alterar"];
+
+        $checkedM = $sexo == "M" ? "checked" : "";
+        $checkedF = $sexo == "F" ? "checked" : "";
+
+     
                 
 ?>
 
@@ -101,8 +108,8 @@ $estados = array(
                 
                 <div class="form-group">
                     <label for="sexo">Sexo:</label><br>
-                    <label for="sexo"> <input type="radio" name="sexo" id="M" value="M"> Masculino</label><br>
-                    <label for="sexo"> <input type="radio" name="sexo" id="F" value="F"> Feminino</label><br>
+                    <label for="sexo"> <input type="radio" name="sexo" id="M" value="M" <?php echo $checkedM ?>> Masculino</label><br>
+                    <label for="sexo"> <input type="radio" name="sexo" id="F" value="F" <?php echo $checkedF ?>> Feminino</label><br>
                 </div>
                
                 <div class="form-group">
@@ -125,9 +132,14 @@ $estados = array(
                     <label for="estado">Estado:</label>
                     <select name=estado class="form-control">
                         <?php
-                            foreach($estados as $estado => $sigla ){
-                                
-                                echo "<option value='$estado'>$sigla</option>";
+                            if(isset($estado)){
+                                $estado1 = $estado;
+                            }                           
+                                foreach($estados as $estado => $sigla ){
+                                    $selected = $estado1 == $estado ? 'selected' : "";
+                                    
+                                    
+                                echo "<option value='$estado' $selected >$sigla</option>";
                                 
                             }
                         
