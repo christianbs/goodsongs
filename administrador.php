@@ -1,3 +1,20 @@
+<?php
+
+   
+    if(isset($_POST["btn_excluir"]))
+    {
+        include_once "php/dados/cadastro_usuario_dao.php";
+
+        deletar_usuario($_POST["btn_excluir"]);
+        echo "O usuário que será excluido: ".$_POST["btn_excluir"];
+    }
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,10 +41,10 @@
 </section>
 <section class="col-sm-4">
     <h1>Usuários</h1>
-    <form id="formUsuario">
+    <form method="POST">
         <input type='hidden' id='idUsuario' name='idUsuario'>
         <?php
-        include "php/dados/cadastro_usuario_dao.php";
+         include_once "php/dados/cadastro_usuario_dao.php";
         listar_usuarios_admin();
         ?>
     </form>

@@ -44,9 +44,9 @@ function validarFormulario(){
         
         mensagem += "ERRO FALTA O NOME \n";
     }
-    if(cpf.value == ""){
+    if(cpf.value == "" || cpf.value.length < 11){
         
-        mensagem += "ERRO FALTA O CPF \n";
+        mensagem += "ERRO O CPF DEVE CONTER 11 CARACTERES \n";
         
     }
      if(email.value == ""){
@@ -208,7 +208,7 @@ function validarFormularioPost(){
      $("#cpf").mask("999.999.999-99");
      $("#dataNascimento").mask("00/00/0000");
      $("#cep").mask("00000-000");
-      
+   
       
  }); 
 
