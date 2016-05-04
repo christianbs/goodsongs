@@ -9,11 +9,11 @@
                 <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Modelos<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="lespaul.html">Les Paul</a></li>
-                    <li><a href="sg.html">SG</a></li>
-                    <li><a href="flyingv.html">Flying V</a></li>
-                    <li><a href="stratocaster.html">Stratocaster</a></li>
-                    <li><a href="telecaster.html">Telecaster</a></li>
+                    <li><a href="modelos/lespaul.php">Les Paul</a></li>
+                    <li><a href="modelos/sg.php">SG</a></li>
+                    <li><a href="modelos/flyingv.php">Flying V</a></li>
+                    <li><a href="modelos/stratocaster.php">Stratocaster</a></li>
+                    <li><a href="modelos/telecaster.php">Telecaster</a></li>
                 </ul>
                 </li>
                 <li><a href="contato.html">Contato</a></li>
