@@ -43,7 +43,7 @@ $estados = array(
         }
             */
 
-        $resultado=carregar_usuario_para_update($_POST["btn_alterar"]); 
+        $resultado=carregar_usuario_para_update($_POST["idUsuarioAlterar"]); 
 
         $nome = $resultado[0];     
         $cpf  = $resultado[1];
@@ -59,7 +59,7 @@ $estados = array(
         $cep = $resultado[11];
         $idEndereco = $resultado[12];
      
-        $idDadosPessoais = $_POST["btn_alterar"];
+        $idDadosPessoais = $_POST["idUsuarioAlterar"];
 
         $checkedM = $sexo == "M" ? "checked" : "";
         $checkedF = $sexo == "F" ? "checked" : "";
@@ -87,7 +87,7 @@ $estados = array(
         <section class="col-sm-4">
         </section>
         <section class="col-sm-4">
-            <form role="form" enctype='multipart/form-data' action="php/controles/atualiza_cadastro_usuario.php" method="post" >
+            <form role="form" enctype='multipart/form-data' action="php/controles/atualiza_cadastro_usuario.php" method="post" onsubmit="return validarFormularioDeAlteracaoDeUsuario();">
                 
                 <div class="form-group">
                     <label for="nome">Nome Completo:</label>
@@ -170,7 +170,7 @@ $estados = array(
                     <input type="hidden" class="form-control" value="<?php echo $idEndereco ?>" id="idEndereco" name="idEndereco">
                 </div>
                    
-                <p><input type="submit"  class="btn btn-default" value="Proximo" name="prosseguir"/></p>
+                <p><input type="submit"  class="btn btn-default" value="Concluir" name="Concluir"/></p>
             </form>
         </section>             
     </body>

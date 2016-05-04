@@ -199,7 +199,122 @@ function validarFormularioPost(){
     
 }
 
-
+//Validação java script se o campo esta vazio na tela de alteração de usuario
+function validarFormularioDeAlteracaoDeUsuario(){
+    var mensagem = "";
+    var nome = document.getElementById("nome");
+    var cpf = document.getElementById("cpf");
+    var email = document.getElementById("email");
+    var confirmaEmail = document.getElementById("confirmaEmail");
+    var masculino = document.getElementById("M").checked;         
+    var feminino = document.getElementById("F").checked;  
+    var checado = true;
+    var dataNascimento = document.getElementById("dataNascimento");   
+    var logradouro = document.getElementById("logradouro");
+    var numero = document.getElementById("numero");       
+    var estado = document.getElementById("estado");
+    var cidade = document.getElementById("cidade");
+    var cep = document.getElementById("cep");
+    var usuario = document.getElementById("usuario");
+    var senha = document.getElementById("senha");
+    var confirmarSenha = document.getElementById("confirmarSenha");
+    
+    
+     if(usuario.value == ""){
+        
+        mensagem += "ERRO FALTA O USUARIO \n";
+    }
+    if(senha.value == ""){
+        
+        mensagem += "ERRO FALTA A SENHA \n";
+        
+    }
+     if(confirmarSenha.value == ""){
+        
+        mensagem += "ERRO FALTA O CONFIRMAR SENHA \n";
+        
+    }   
+    if (senha.value != "" && confirmarSenha.value !="" ){
+         if(senha.value.localeCompare(confirmarSenha.value) != 0){
+        
+        mensagem += "ERRO AS SENHAS ESTÃO DIFERENTES INSIRA NOVAMENTE"
+         }
+        
+    }
+    
+    if(masculino || feminino == true){
+       var sexo = document.getElementById("sexo");         
+    }else{
+        
+        checado = false;
+    }
+    
+    if(nome.value == ""){
+        
+        mensagem += "ERRO FALTA O NOME \n";
+    }
+    if(cpf.value == "" || cpf.value.length < 11){
+        
+        mensagem += "ERRO O CPF DEVE CONTER 11 CARACTERES \n";
+        
+    }
+     if(email.value == ""){
+        
+        mensagem += "ERRO FALTA O EMAIL \n";
+        
+    }
+     if(confirmaEmail.value == ""){
+        
+        mensagem += "ERRO FALTA O CORFIRMAR EMAIL \n";
+        
+    }  if(checado == false){
+        
+        mensagem += "ERRO FALTA O SEXO \n";
+        
+    }  
+    
+    if(dataNascimento.value == ""){
+        
+        mensagem += "ERRO FALTA A DATA DE NASCIMENTO \n";
+        
+    }
+    if(logradouro.value == ""){
+        
+        mensagem += "ERRO FALTA O LOGRADOURO \n";
+        
+    }
+     if(numero.value == ""){
+        
+        mensagem += "ERRO FALTA O NUMERO DA RESIDENCIA \n";
+        
+    }
+  
+    if(cidade.value == ""){
+        
+        mensagem += "ERRO FALTA A CIDADE \n";
+        
+    }
+    if(cep.value == ""){
+        
+        mensagem += "ERRO FALTA O CEP \n";
+        
+    }
+     if (email.value != "" && confirmaEmail.value !="" ){
+         if(email.value.localeCompare(confirmaEmail.value) != 0){
+        
+        mensagem += "ERRO OS EMAILS ESTÃO DIFERENTES INSIRA NOVAMENTE"
+         }
+        
+    }
+    if(mensagem != ""){
+        
+        alert(mensagem);
+        return false;
+    }else{
+        return true;
+    }
+    
+}
 
     //validação via jquery para as mascaras.
 

@@ -1,20 +1,3 @@
-<?php
-
-   
-    if(isset($_POST["btn_excluir"]))
-    {
-        include_once "php/dados/cadastro_usuario_dao.php";
-
-        deletar_usuario($_POST["btn_excluir"]);
-        echo "O usuário que será excluido: ".$_POST["btn_excluir"];
-    }
-
-
-?>
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,6 +51,23 @@
         <input type='hidden' id='idUsuarioExcluido' name='idUsuarioExcluido'>
     </form>
 </div>
+<div class="modal fade" id="modalAlterarUsuario" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Deseja Alterar o usuario</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="alterarUsuario()">Sim</button>
+            </div>
+            <form class="fade" id="formAlterarUsuario" method="post" action="atualizar_usuario.php">
+                <input type='hidden' id='idUsuarioAlterar' name='idUsuarioAlterar'>
+            </form>
+        </div>
+    </div>
+</div> 
 <div class="modal fade" id="modalExcluirForum" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -85,7 +85,37 @@
         </div>
     </div>
 </div>
+ <div class="modal fade" id="modalAlterarForum" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Deseja Alterar o forum</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="alterarForum()">Sim</button>
+            </div>
+            <form class="fade" id="formAlterarForum" method="post" action="atualizar_forum.php">
+                <input type='hidden' id='idForumAlterar' name='idForumAlterar'>
+            </form>
+        </div>
+    </div>
+</div> 
+   
 <script type="text/javascript">
+    function setIdAlterarForum(id){
+        document.getElementById("idForumAlterar").value = id;
+    }
+    function alterarForum(){
+        document.getElementById("formAlterarForum").submit();
+    }
+    function setIdAlterarUsuario(id){
+        document.getElementById("idUsuarioAlterar").value = id;
+    }
+    function alterarUsuario(){
+        document.getElementById("formAlterarUsuario").submit();
+    }
     function excluirUsuario() {
         document.getElementById("formExcluirUsuario").submit();
     }
@@ -99,5 +129,5 @@
         document.getElementById("idForumExcluido").value = id;
     }
 </script>
-<body>
+</body>
 </html>

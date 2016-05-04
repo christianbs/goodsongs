@@ -7,6 +7,7 @@ include "mysql.php";
 // inserir_dados("Chris", "11122233344", "chris@", "M", "1993-10-18", 6);
 // inserir_usuario("christian", "12345", 5);
 
+
 function carregar_usuario_para_update($id){    
     
     global $conexao;
@@ -15,7 +16,7 @@ function carregar_usuario_para_update($id){
         where usuario.id = " .$id . ";";
         
     
-        $resultado = mysqli_query($conexao, $sql) or die ("Erro ao inserir usuário: " . mysqli_error($conexao));
+        $resultado = mysqli_query($conexao, $sql) or die ("Erro ao carregar_usuario_para_update: " . mysqli_error($conexao));
         if ($resultado) {
             while ($linha = mysqli_fetch_array($resultado)) {
              
@@ -91,20 +92,12 @@ function listar_usuarios_admin()
         echo "</thead>";
         echo "<tbody>";
         while ($linha = mysqli_fetch_array($resultado)) {
-            echo "<tr>";
-            echo "<td>" . $linha['nome'] . "</td>";
-            echo "<form action='atualizar_usuario.php'  method='POST'>";
-            echo '<td style="text-align: center;"><button type="submit" class="btn btn-default" name="btn_alterar" value="'.$linha['id'].'">
-                    <i class="glyphicon glyphicon-pencil"></i>
-                </button></td>';
-            echo "</form>";
-            echo '<td style="text-align: center;"><button type="submit" class="btn btn-default" name="btn_excluir" value="'.$linha['id'].'">
-                    <i class="glyphicon glyphicon-remove-circle"></i>
-                </button></td>';
-            
-          
-            echo "</tr>";
-        }
+        echo "<tr>
+                <td>" . $linha['nome'] . "</td>
+                <td style='text-align: center;'><a data-toggle=\"modal\" data-target=\"#modalAlterarUsuario\" onclick='setIdAlterarUsuario(\"" . $linha['id'] . "\")'><span class=\"glyphicon glyphicon-pencil\"></a></span></td>
+                <td style='text-align: center;'><a data-toggle=\"modal\" data-target=\"#modalExcluirUsuario\" onclick='setIdUsuarioExcluido(\"" . $linha['id'] . "\")'><span class=\"glyphicon glyphicon-remove-circle\"></a></span></td>
+             </tr>";
+    }
         echo "</tbody>";
         echo "</table>";
     }

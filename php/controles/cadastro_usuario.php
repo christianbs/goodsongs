@@ -12,10 +12,10 @@
    }
     if($mensagem != ""){        
        
-           echo $mensagem;
+        echo $mensagem;
         
-           echo "<input type='button' class='btn btn-default' id='voltar' name='voltar' value='voltar' onclick='history.go(-1)'> ";
-           exit;         
+        echo "<input type='button' class='btn btn-default' id='voltar' name='voltar' value='voltar' onclick='history.go(-1)'> ";
+        exit;         
 
    }else{
         include "../regras/cadastro_usuario_rn.php";

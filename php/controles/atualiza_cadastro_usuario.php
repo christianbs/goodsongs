@@ -19,7 +19,7 @@
         exit;         
 
    }else{
-       include "../regras/cadastro_usuario_rn.php";
+       include "../dados/cadastro_usuario_dao.php";
         
         $idDadosPessoais = htmlspecialchars($_POST["idDadosPessoais"]); 
         $idEndereco = htmlspecialchars($_POST['idEndereco']);
