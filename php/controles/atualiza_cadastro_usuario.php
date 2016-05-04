@@ -12,6 +12,7 @@
    }
     if($mensagem != ""){        
        
+       include 'goodsongs/menu.php';
         echo $mensagem;
         
         echo "<input type='button' class='btn btn-default' id='voltar' name='voltar' value='voltar' onclick='history.go(-1)'> ";
@@ -41,5 +42,7 @@
         update_dados_pessoais($idDadosPessoais,$nome,$cpf,$email,$sexo,$dataNascimento);
         update_endereco($idEndereco,$logradouro,$numero,$cidade,$estado,$cep);
         update_usuario($idDadosPessoais,$usuario,$senha);
+        
+        header("location:../../administrador.php");
  
    }

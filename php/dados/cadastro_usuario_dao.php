@@ -48,7 +48,8 @@ function update_dados_pessoais($idDadosPessoais,$nome,$cpf,$email,$sexo,$nascime
     global $conexao;
     $sql = "UPDATE dados_pessoais SET nome='$nome',cpf='$cpf',email='$email',sexo='$sexo',nascimento='$nascimento'
     where id=".$idDadosPessoais.";";
-    $resultado = mysqli_query($conexao, $sql) or die ("Erro ao atualizar os dados_pessoais: " . mysqli_error($conexao));    
+    $resultado = mysqli_query($conexao, $sql) or die ("Erro ao atualizar os dados_pessoais: " . mysqli_error($conexao)); 
+     
     
 }
 function update_endereco($idEndereco,$endereco,$numero,$cidade,$estado,$cep){
