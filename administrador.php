@@ -102,6 +102,9 @@
         </div>
     </div>
 </div> 
+     <form class="fade" id="formAlterarForum" method="post" action="atualizar_forum.php">
+                <input type='hidden' id='idForumAlterar' name='idForumAlterar'>
+    </form>
    
 <script type="text/javascript">
     function setIdAlterarForum(id){
