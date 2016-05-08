@@ -3,7 +3,7 @@
 
   if(empty($_POST['titulo']) ||  empty($_POST['pergunta']))  {
         
-     
+     include '../../menu.php';
      echo "CAMPOS VAZIOS </br> ";
      echo "<input type='button' class='btn btn-default' id='voltar' name='voltar' value='voltar' onclick='history.go(-1)'> ";
      exit;        

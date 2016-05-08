@@ -4,25 +4,13 @@
         <meta charset="utf-8" />
         <title>Guitarras Contato</title>
         <link rel="stylesheet" type="text/css" href="css/estilo.css" />
+           <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </head>
     <body > 
-        <header> 
-            <a href="index.html" class="home">Home</a>
-            <nav class="menu">
-                <ul>
-                    <li><a href="">Modelos</a>
-                        <ul>
-                            <li><a href="lespaul.html">Les Paul</a></li>
-                            <li><a href="sg.html">SG</a></li>
-                            <li><a href="flyingv.html">Flying V</a></li>
-                            <li><a href="stratocaster.html">Stratocaster</a></li>
-                            <li><a href="telecaster.html">Telecaster</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
-            </nav>
-        </header>
+     <?php include 'menu.php' ?>
         <section>
             <div class="imagem">
                 <img src="images/lespaul.jpg" class="imagem-principal"/>            

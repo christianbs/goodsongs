@@ -11,7 +11,7 @@
        
    }
     if($mensagem != ""){        
-       
+       include '../../menu.php';
         echo $mensagem;
         
         echo "<input type='button' class='btn btn-default' id='voltar' name='voltar' value='voltar' onclick='history.go(-1)'> ";

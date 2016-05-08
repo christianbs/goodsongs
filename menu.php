@@ -16,7 +16,7 @@
                     <li><a href="modelos/telecaster.php">Telecaster</a></li>
                 </ul>
                 </li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="contato.php">Contato</a></li>
                 <li><a href="inicio.php">Forum</a></li>
                 <li><a href="cadastro-dados-pessoais.php">Cadastro</a></li>
                 <li><a href="administrador.php">Administrador</a></li>

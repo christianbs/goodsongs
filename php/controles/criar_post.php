@@ -1,7 +1,7 @@
 <?php
 
     if(empty(htmlspecialchars($_POST['idForum'])) || empty(htmlspecialchars($_POST['post'])) || empty(htmlspecialchars($_POST['tituloForum'])) ){
-
+            include '../../menu.php';
             echo "CAMPOS VAZIOS </br> ";
             echo "<input type='button' class='btn btn-default' id='voltar' name='voltar' value='voltar' onclick='history.go(-1)'> ";
             exit;
