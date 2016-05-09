@@ -10,9 +10,10 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </head>
     <body>
-       <?php include 'menu.php' ?>
+      
         <section>
             <div class="imagem">
+                 <?php include 'menu.php' ?>
                 <img src="../images/lespaul.jpg" class="imagem-principal"/>
             
                     <div class="artigo">
