@@ -8,7 +8,8 @@
     }else{
 
         include "../dados/cadastrar_post_dao.php";
-        $id_usuario = 1;
+        session_start();
+        $id_usuario = $_SESSION['codigo'];
         $id_forum = htmlspecialchars($_POST['idForum']);
         $post = htmlspecialchars($_POST['post']);
         $tituloForum = htmlspecialchars($_POST['tituloForum']);

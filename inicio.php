@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+include "php/controles/validar_login.php";
+?>
 <html>
 <head>
     <meta charset="utf-8">
