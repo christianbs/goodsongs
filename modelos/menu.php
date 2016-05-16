@@ -1,3 +1,23 @@
+<?php
+session_start();
+$admin = $_SESSION['admin'];
+$login = $_SESSION['login'];
+$senha = $_SESSION['senha'];
+$logado = '';
+if ($login != '' && $senha != '') {
+    $logado = 'true';
+} else {
+    $logado = 'false';
+}
+if ($admin == '' || $admin != '1') {
+    $admin = "false";
+} else {
+    $admin = "true";
+}
+function sair() {
+    include "php/controles/logout.php";
+}
+?>
 <header>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -18,9 +38,23 @@
                 </li>
                 <li><a href="../contato.php">Contato</a></li>
                 <li><a href="../inicio.php">Forum</a></li>
-                <li><a href="../cadastro-dados-pessoais.php">Cadastro</a></li>
-                <li><a href="../administrador.php">Administrador</a></li>
+                <li><a id="link" href="../administrador.php">Administrador</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a id="sair" onclick="sair()">Sair</a></li>
             </ul>
         </div>
     </nav>
 </header>
+<form id="sair-form" action="../php/controles/logout.php"></form>
+<script type="text/javascript">
+    if (document.getElementById('admin').value != 'true') {
+        document.getElementById('link').style.visibility = 'hidden';
+    }
+    if (document.getElementById('logado').value != 'true') {
+        document.getElementById('sair').style.visibility = 'hidden';
+    }
+    function sair() {
+        document.getElementById('sair-form').submit();
+    }
+</script>
