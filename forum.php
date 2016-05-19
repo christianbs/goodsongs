@@ -24,7 +24,7 @@ include "php/controles/validar_login.php";
 <section class="col-sm-8">
     <h1><?php echo $titulo; ?></h1>
     <?php
-    listar_posts_forum($id);
+        listar_posts_forum($id);
     ?>
     <hr>
     <form method="post" action="php/controles/criar_post.php" onsubmit="return validarFormularioPost();" >

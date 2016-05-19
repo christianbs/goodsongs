@@ -14,7 +14,7 @@
        include '../../menu.php';
         echo $mensagem;
         
-        echo "<input type='button' class='btn btn-default' id='voltar' name='voltar' value='voltar' onclick='history.go(-1)'> ";
+        echo "<input type='button' class='btn btn-default' id='voltar' name='voltar' value='voltar' onclick='history.go(-1)'>";
         exit;         
 
    }else{
@@ -89,7 +89,7 @@
                 if (!file_exists('imagem')) {
                     mkdir('imagem', 0777, true);
                 }
-                $destino = 'imagem/' . $arquivo['name'];
+                $destino = str_replace(".","",'imagem/' .$cpf. $arquivo['name']);
 
         
         
@@ -98,7 +98,7 @@
 
         $id_endereco = inserir_endereco_rn($logradouro, $numero, $cidade, $estado, $cep);
         $id_dados = inserir_dados_rn($nome, $cpf, $email, $sexo, $dataNascimento, $id_endereco);
-        inserir_usuario_rn($usuario, $senha, $id_dados);
+        inserir_usuario_rn($usuario, $senha, $id_dados,$destino);
 
         header("location:../../inicio.php");
    }

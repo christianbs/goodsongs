@@ -70,7 +70,8 @@ function update_usuario($idDadosPessoais, $usuario, $senha)
 {
 
     global $conexao;
-    $sql = "UPDATE usuario SET usuario='$usuario',senha='$senha'
+    $senhaCriptografada = md5($senha);
+    $sql = "UPDATE usuario SET usuario='$usuario',senha='$senhaCriptografada' 
     where id=" . $idDadosPessoais . " ;";
     $resultado = mysqli_query($conexao, $sql) or die ("Erro ao atualizar o usuario: " . mysqli_error($conexao));
 
@@ -124,11 +125,11 @@ function inserir_dados($nome, $cpf, $email, $sexo, $nascimento, $id_endereco)
     return mysqli_insert_id($conexao);
 }
 
-function inserir_usuario($usuario, $senha, $id_dados_pessoais)
+function inserir_usuario($usuario, $senha, $id_dados_pessoais,$destino)
 {
     global $conexao;
     $admin = verificar_existencia_usuario_admin();
-    $sql = "insert into usuario(usuario, senha, id_dados_pessoais, administrador, ativo) values('" . $usuario . "', '" . md5($senha) . "', " . $id_dados_pessoais . ", " . $admin . ", 1);";
+    $sql = "insert into usuario(usuario, senha, id_dados_pessoais, administrador, ativo,nomeFoto) values('" . $usuario . "', '" . md5($senha) . "', '" . $id_dados_pessoais . "', '" . $admin . "', 1,'".$destino."');";
     $resultado = mysqli_query($conexao, $sql) or die ("Erro ao inserir usuário: " . mysqli_error($conexao));
 }
 

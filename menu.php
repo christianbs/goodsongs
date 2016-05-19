@@ -1,18 +1,19 @@
 <?php
-session_start();
-$admin = $_SESSION['admin'];
-$login = $_SESSION['login'];
-$senha = $_SESSION['senha'];
-$logado = '';
-if ($login != '' && $senha != '') {
+if (isset($_SESSION['login']) && isset($_SESSION['senha'])) {
+    $login = $_SESSION['login'];
+    $senha = $_SESSION['senha'];
     $logado = 'true';
 } else {
+    
     $logado = 'false';
 }
-if ($admin == '' || $admin != '1') {
-    $admin = "false";
-} else {
-    $admin = "true";
+if (isset($_SESSION['admin'])) {
+    $admin = $_SESSION['admin'];
+    if ($admin == '' || $admin != '1') {
+        $admin = "false";
+    } else {
+        $admin = "true";
+    }   
 }
 function sair() {
     include "php/controles/logout.php";

@@ -23,7 +23,9 @@ create table usuario(
 	id_dados_pessoais int not null,
 	administrador tinyint(1) not null,
 	ativo tinyint(1) not null,
-    foreign key(id_dados_pessoais) references dados_pessoais(id)
+    nomeFoto varchar(255),
+    foreign key(id_dados_pessoais) references dados_pessoais(id),
+    
 );
 create table forum(
 	id int not null auto_increment primary key,

@@ -17,7 +17,7 @@ function inserir_dados_rn($nome, $cpf, $email, $sexo, $nascimento, $id_endereco)
     return inserir_dados($nome, $cpf, $email, $sexo, $nascimento, $id_endereco);
 }
 
-function inserir_usuario_rn($usuario, $senha, $id_dados_pessoais)
+function inserir_usuario_rn($usuario, $senha, $id_dados_pessoais,$destino)
 {
-    inserir_usuario($usuario, $senha, $id_dados_pessoais);
+    inserir_usuario($usuario, $senha, $id_dados_pessoais,$destino);
 }
